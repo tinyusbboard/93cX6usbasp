@@ -67,7 +67,7 @@ AVRDUDE_FUSE += -U efuse:w:$(EFUSE):m
 endif
 
 
-MYCFLAGS = -Wall -g3 -ggdb -Os -fno-move-loop-invariants -fno-tree-scev-cprop -fno-inline-small-functions -ffunction-sections -fdata-sections -I. -Isource -Ilibraries -Ilibraries/avr-contexts/include -Ilibraries/v-usb/usbdrv -mmcu=$(DEVICE) -DF_CPU=$(F_CPU) $(CFLAGS)   $(DEFINES)
+MYCFLAGS = -Wall -g3 -ggdb -Os -fno-move-loop-invariants -fno-tree-scev-cprop -fno-inline-small-functions -ffunction-sections -fdata-sections -I. -Isource -Ilibraries -Ilibraries/avrlibs-baerwolf/include -Ilibraries/v-usb/usbdrv -mmcu=$(DEVICE) -DF_CPU=$(F_CPU) $(CFLAGS)   $(DEFINES)
 MYLDFLAGS = -Wl,--relax,--gc-sections $(LDFLAGS)
 
 
@@ -99,19 +99,19 @@ endif
 
 
 
-STDDEP	 = *.h source/*.h source/hw/* libraries/API/*.h libraries/avr-contexts/include/*
+STDDEP	 = *.h source/*.h source/hw/* libraries/API/*.h libraries/avrlibs-baerwolf/include/*
 EXTRADEP = Makefile
 
 
 all: release/main.hex release/eeprom.hex release/main.bin release/eeprom.bin release/main.asm build/main.asm
 
 
-build/extfunc.o: libraries/avr-contexts/source/extfunc.c $(STDDEP) $(EXTRADEP) 
-	$(CC) libraries/avr-contexts/source/extfunc.c -c -o build/extfunc.o $(MYCFLAGS)
-build/cpucontext.o: libraries/avr-contexts/source/cpucontext.c $(STDDEP) $(EXTRADEP)
-	$(CC) libraries/avr-contexts/source/cpucontext.c -c -o build/cpucontext.o $(MYCFLAGS)
-build/hwclock.o: libraries/avr-contexts/source/hwclock.c $(STDDEP) $(EXTRADEP)
-	$(CC) libraries/avr-contexts/source/hwclock.c -c -o build/hwclock.o $(MYCFLAGS)
+build/extfunc.o: libraries/avrlibs-baerwolf/source/extfunc.c $(STDDEP) $(EXTRADEP) 
+	$(CC) libraries/avrlibs-baerwolf/source/extfunc.c -c -o build/extfunc.o $(MYCFLAGS)
+build/cpucontext.o: libraries/avrlibs-baerwolf/source/cpucontext.c $(STDDEP) $(EXTRADEP)
+	$(CC) libraries/avrlibs-baerwolf/source/cpucontext.c -c -o build/cpucontext.o $(MYCFLAGS)
+build/hwclock.o: libraries/avrlibs-baerwolf/source/hwclock.c $(STDDEP) $(EXTRADEP)
+	$(CC) libraries/avrlibs-baerwolf/source/hwclock.c -c -o build/hwclock.o $(MYCFLAGS)
 
 
 build/usbdrvasm.o: libraries/v-usb/usbdrv/usbdrvasm.S $(STDDEP) $(EXTRADEP)
