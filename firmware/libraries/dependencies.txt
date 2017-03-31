@@ -1,0 +1,9 @@
+Currently this project has 5 dependencies
+
+"API"			(https://github.com/tinyusbboard/API)		- tinyUSBboard/USBaspLoader API
+"USBaspLoader"		(https://github.com/baerwolf/USBaspLoader)	- needed by the API for some imports
+"USBaspTool"		(https://github.com/baerwolf/USBaspTool)	- a tool to switch between firmwares without physical access to tinyUSBboard
+
+"avrlib-baerwolf"	(https://github.com/baerwolf/avrlibs-baerwolf)	- previously also called "avr-contexts"
+
+"v-usb"			(https://github.com/tinyusbboard/v-usb)		- obdev's software usb interface
