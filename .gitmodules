@@ -1,0 +1,15 @@
+[submodule "firmware/libraries/API"]
+	path = firmware/libraries/API
+	url = https://github.com/tinyusbboard/API
+[submodule "firmware/libraries/USBaspLoader"]
+	path = firmware/libraries/USBaspLoader
+	url = https://github.com/baerwolf/USBaspLoader
+[submodule "firmware/libraries/USBaspTool"]
+	path = firmware/libraries/USBaspTool
+	url = https://github.com/baerwolf/USBaspTool
+[submodule "firmware/libraries/avrlibs-baerwolf"]
+	path = firmware/libraries/avrlibs-baerwolf
+	url = https://github.com/baerwolf/avrlibs-baerwolf
+[submodule "firmware/libraries/v-usb"]
+	path = firmware/libraries/v-usb
+	url = https://github.com/tinyusbboard/v-usb
