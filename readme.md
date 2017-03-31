@@ -1,7 +1,7 @@
 93cX6usbasp
 ===========
 
-93cX6usbasp is a project (primary developted for tinyUSBboard, but also intended for other AVR boards) implementing a programmer for the famous 93xX6 eeprom.
+93cX6usbasp is a project (primary developted for tinyUSBboard, but also intended for other AVR boards) implementing a programmer for the famous 93cX6 eeprom.
 
 Meaning 93cX6usbasp will turn an AVR into an USB enabled device for programming 93c46, 93c56 or 93c66 compatible eeproms from various vendors (ATMEL, Microchip, STM ...).
 Therefore 93cX6usbasp emulates an usbasp programmer (http://www.fischl.de/usbasp/) running on ATmega8.
@@ -12,10 +12,10 @@ The only difference is, it is accessing the externally connected 93cX6 instead t
 For the default layout (defines.h), just connect the following pins (93cX6 <--> AVR) together:
 
 
-CS <--> PB2 (SS)
-DI <--> PB3 (MOSI)
-DO <--> PB4 (MISO)
-SK <--> PB5 (SCK)
+* CS <--> PB2 (SS)
+* DI <--> PB3 (MOSI)
+* DO <--> PB4 (MISO)
+* SK <--> PB5 (SCK)
 
 All configuration can be done via environment variables within the make-system.
 
